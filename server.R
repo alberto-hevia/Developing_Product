@@ -1,5 +1,6 @@
 library(shiny)
 library(ggplot2)
+library(RCurl)
 
 # Here we put the processing code
 
@@ -46,8 +47,11 @@ expandTable <- function(theTable) {
   return(t)
 } 
 
-# Read the dataSet
-dataSet <- read.csv(file = "StormData.txt", stringsAsFactors = FALSE, sep = ",")
+# Read the dataSet: from my directory in github
+urlfile<-"https://raw.github.com/alberto-hevia/Developing_Product/master/StormData.txt"
+dataSet<-read.csv(url(urlfile))
+#dataSet <- read.csv(file = "StormData.txt", stringsAsFactors = FALSE, sep = ",")
+
 dataSet[,"LATITUDE"] <- dataSet[,"LATITUDE"]/100
 dataSet[,"LONGITUDE"] <- dataSet[,"LONGITUDE"]/100
 
