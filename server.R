@@ -48,9 +48,9 @@ expandTable <- function(theTable) {
 } 
 
 # Read the dataSet: from my directory in github
-urlfile<-"https://raw.github.com/alberto-hevia/Developing_Product/master/StormData.txt"
-dataSet<-read.csv(url(urlfile))
-#dataSet <- read.csv(file = "StormData.txt", stringsAsFactors = FALSE, sep = ",")
+#urlfile<-"https://raw.github.com/alberto-hevia/Developing_Product/master/StormData.txt"
+#dataSet<-read.csv(url(urlfile))
+dataSet <- read.csv(file = "StormData.txt", stringsAsFactors = FALSE, sep = ",")
 
 dataSet[,"LATITUDE"] <- dataSet[,"LATITUDE"]/100
 dataSet[,"LONGITUDE"] <- dataSet[,"LONGITUDE"]/100
